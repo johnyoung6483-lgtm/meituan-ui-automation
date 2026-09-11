@@ -1,0 +1,86 @@
+# 美团 UI 自动化技能配置
+# 美团 UI 文案随版本变化时，优先修改本文件，不改代码。
+# 所有键均有内置默认值；此处仅提供"需要覆盖"的项。
+
+package: com.sankuai.meituan            # 美团应用包名
+
+search_box_hints:                        # 首页搜索框命中规则（按顺序匹配，命中即用）
+  - 搜索商家、地点或关键词
+  - 搜索商家
+  - 搜索
+search_confirm: 搜索                     # 搜索确认（按钮文案或回车键）
+
+merchant_tab: 商家                       # 搜索结果页的"商家"筛选 Tab
+merchant_name_match: exact_contains      # 商家命中方式：exact_contains / contains
+
+add_to_cart_texts:                       # 加购按钮文案
+  - 加入购物车
+  - 加购
+spec_pick_texts:                         # 需选规格时的入口文案
+  - 选规格
+spec_confirm_texts:                      # 规格弹窗确认文案
+  - 确定
+  - 完成
+  - 加入购物车
+cart_entry_texts:                        # 购物车入口文案
+  - 购物车
+checkout_button_texts:                   # 去结算按钮文案（本流程最后一个可点击按钮）
+  - 去结算
+checkout_landmarks:                      # 判定"已进入结算页"的标志文案（出现任一即停）
+  - 提交订单
+  - 确认支付
+  - 去支付
+  - 收银台
+  - 订单金额
+  - 支付方式
+
+payment_success_texts:                   # 被动等待时判定"用户已支付成功"的文案
+  - 支付成功
+  - 已完成支付
+  - 付款成功
+  - 交易成功
+
+ad_hints:                                # 广告/营销弹窗特征词（命中任一即视为弹窗）
+  - 广告
+  - 推广
+  - 红包
+  - 领券
+  - 优惠券
+  - 抽奖
+  - 会员
+  - 首单
+  - 新人
+ad_close_texts:                          # 弹窗上允许点击的"关闭类"按钮文案（白名单）
+  - 关闭
+  - 跳过
+  - 我知道了
+  - 以后再说
+  - 暂不需要
+  - 不感兴趣
+  - 知道了
+location_drift_texts:                    # 定位漂移/异常特征文案
+  - 定位不准
+  - 定位失败
+  - 重新定位
+  - 定位服务未开启
+  - 城市已切换
+  - 检测到位置变化
+location_permission_texts:               # 定位授权弹窗特征文案
+  - 授权定位
+  - 允许定位
+  - 定位权限
+  - 仅使用期间允许
+  - 仅在使用期间允许
+location_confirm_texts:                  # 定位确认按钮（允许点击的）
+  - 重新定位
+  - 确定
+  - 允许
+  - 仅使用期间允许
+  - 仅在使用期间允许
+
+# 行为参数
+wait_stable_sec: 1.0                     # 每步动作后的稳定等待（秒）
+timeout_node_sec: 8                      # 查找节点的超时（秒）
+max_dismiss_popups: 3                    # 每环节最多跳过弹窗次数
+max_location_retries: 2                  # 每环节最多定位纠偏次数
+wait_user_min: 10                        # 停在结算页后被动等待分钟数（默认）
